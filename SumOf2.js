@@ -1,4 +1,4 @@
-//print true if 2 numbers in the list add up to the sum given
+//given a sorted list, print true if 2 numbers in the list add up to the sum given
 
 let list = [1,2,3,6];
 let sum = 5;
@@ -18,12 +18,12 @@ const solveSum = (list,sum ) => {
 const solveSumN = (list, sum ) => {
     leftIndex = 0;
     rightIndex = list.length-1;
-    while(leftIndex!== rightIndex){
-        if (list[leftIndex] +list[rightIndex]< sum){
+    while(leftIndex !== rightIndex){
+        if (list[leftIndex] + list[rightIndex]< sum){
             leftIndex++;
         }
-        else if (leftIndex+rightIndex){
-            rightIndex++;
+        else if (list[leftIndex] + list[rightIndex]> sum){
+            rightIndex--;
         }
         else {
             return true;
